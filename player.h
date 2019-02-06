@@ -13,6 +13,7 @@ class player{
 
   private:
     char m_symbol;
+    bool winner;
 }
 
 #endif //end header guard
