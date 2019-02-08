@@ -9,8 +9,9 @@
 
 class player{
   public:
-    void player();
-
+    player();
+    bool setWin();
+    char getSymbol();
   private:
     char m_symbol;
     bool winner;
