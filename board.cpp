@@ -6,11 +6,11 @@ class board{
   public:
     board(){
       m_boardArray = new char[ARR_SIZE][ARR_SIZE];
-      for(int y = 0; y < ARR_SIZE; i++){
-        for(int x = 0; x < ARR_SIZE; j++){
+      for(int y = 0; y < ARR_SIZE; y++){
+        for(int x = 0; x < ARR_SIZE; x++){
           m_boardArray[y][x] = NULL;
         }
-        j = 0;
+        x = 0;
       }
 
     }
@@ -26,11 +26,44 @@ class board{
 
     bool checkWin(player &p){
       char symbol = p->getSymbol();
+      //top row
+      if((m_boardArray[0][0] == symbol) && (m_boardArray[0][1] == symbol) && (m_boardArray[0][2] == symbol)){
+        return true;
+      }
+      //middle row
+      else if((m_boardArray[1][0] == symbol) && (m_boardArray[1][1] == symbol) && (m_boardArray[1][2] == symbol)){
+        return true;
+      }
+      //bottom row
+      else if((m_boardArray[2][0] == symbol) && (m_boardArray[2][1] == symbol) && (m_boardArray[2][2] == symbol)){
+        return true;
+      }
+      //-----------------------------------------------------------------------------------------------------
+      //left column
+      else if((m_boardArray[0][0] == symbol) && (m_boardArray[1][0] == symbol) && (m_boardArray[2][0] == symbol)){
+        return true;
+      }
+      //middle column
+      else if((m_boardArray[0][1] == symbol) && (m_boardArray[1][1] == symbol) && (m_boardArray[2][1] == symbol)){
+        return true;
+      }
+      //right column
+      else if((m_boardArray[0][2] == symbol) && (m_boardArray[1][2] == symbol) && (m_boardArray[2][2] == symbol)){
+        return true;
+      }
+      //-----------------------------------------------------------------------------------------------------
+      //diagonal right
+      else if((m_boardArray[0][0] == symbol) && (m_boardArray[1][1] == symbol) && (m_boardArray[2][2] == symbol)){
+        return true;
+      }
+      //diagonal left
+      else if((m_boardArray[0][2] == symbol) && (m_boardArray[1][1] == symbol) && (m_boardArray[2][0] == symbol)){
+        return true;
+      }
 
-      if(m_boardArray[0][0] == symbol && m_boardArray[1][0])
-      //FRUIT
-
-
+      else{
+        return false;
+      }
 
     }
 
