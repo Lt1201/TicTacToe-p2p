@@ -1,14 +1,14 @@
 //board class, manages movement
-const ARR_SIZE = 3;
+const int ARR_SIZE = 3;
 
 
 class board{
   public:
     board(){
-      m_boardArray = new char[ARR_SIZE][ARR_SIZE];
+      int x;
       for(int y = 0; y < ARR_SIZE; y++){
-        for(int x = 0; x < ARR_SIZE; x++){
-          m_boardArray[y][x] = NULL;
+        for( x = 0; x < ARR_SIZE; x++){
+          m_boardArray[y][x] = '-';
         }
         x = 0;
       }
@@ -16,7 +16,7 @@ class board{
     }
 
     bool move(int x, int y, char symbol){
-      if (m_boardArray[y][x] == NULL){
+      if (m_boardArray[y][x] == '-'){
         m_boardArray[y][x] = symbol;
         return true;
       }else{
@@ -24,7 +24,7 @@ class board{
       }
     }
 
-    bool checkWin(player &p){
+    bool checkWin(Player *p){
       char symbol = p->getSymbol();
       //top row
       if((m_boardArray[0][0] == symbol) && (m_boardArray[0][1] == symbol) && (m_boardArray[0][2] == symbol)){
@@ -68,5 +68,5 @@ class board{
     }
 
   private:
-    char m_boardArray[][];
-}
+    char m_boardArray[ARR_SIZE][ARR_SIZE];
+};
