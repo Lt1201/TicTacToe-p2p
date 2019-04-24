@@ -13,13 +13,13 @@ int main(){
   Player x('x');
   Player o('o');
 
-  board.move(0,0,x.getSymbol());
-  board.move(1,1,x.getSymbol());
-  board.move(2,2,x.getSymbol());
+  board.move(0,0,o.getSymbol());
+  board.move(0,1,o.getSymbol());
+  board.move(0,2,o.getSymbol());
 
   board.printBoard();
-  if (board.checkWin(&x)){
-    std::cout<<"xwin"<<std::endl;
+  if (board.checkWin(&o)){
+    std::cout<<"owin"<<std::endl;
   }
 
   return 0;

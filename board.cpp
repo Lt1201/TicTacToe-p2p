@@ -18,7 +18,7 @@ class Board{
 
     }
 
-    bool move(int x, int y, char symbol){
+    bool move(int y, int x, char symbol){
       if (m_boardArray[y][x] == '-'){
         m_boardArray[y][x] = symbol;
         return true;
