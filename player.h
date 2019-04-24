@@ -7,14 +7,15 @@
 
 //class definition
 
-class player{
+class Player{
   public:
-    player();
+    Player();
+    Player(char);
     bool setWin();
     char getSymbol();
   private:
     char m_symbol;
-    bool winner;
-}
+    bool m_winner;
+};
 
 #endif //end header guard

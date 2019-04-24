@@ -1,10 +1,13 @@
+#include <iostream>
+#include "player.h"
+
 //board class, manages movement
 const int ARR_SIZE = 3;
 
 
-class board{
+class Board{
   public:
-    board(){
+    Board(){
       int x;
       for(int y = 0; y < ARR_SIZE; y++){
         for( x = 0; x < ARR_SIZE; x++){
@@ -65,6 +68,16 @@ class board{
         return false;
       }
 
+    }
+
+    void printBoard(){
+      int x;
+      for(int y = 0; y < ARR_SIZE; y++){
+        for(x = 0; x < ARR_SIZE; x++){
+          std::cout<<m_boardArray[y][x]<<" ";
+        }
+        std::cout<<"\n";
+      }
     }
 
   private:
